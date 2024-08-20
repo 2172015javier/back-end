@@ -28,5 +28,17 @@ escritura).
    ```bash
    npm install
    ```
+4. Instala las dependencias:
+   ```bash
+   npm start
+   ```
+## Pruebas 
+1. Descargar la aplicacion Postman crear un usuario e ingresar
+2. Importar el archivo back-end.postman_collection.json
+![Captura de Pantalla](img/1img.png)
+![Captura de Pantalla](img/2img.png)
+
+
+
 
 

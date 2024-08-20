@@ -1,0 +1,558 @@
+{
+	"info": {
+		"_postman_id": "8c650c97-c3ff-4909-a92c-179ca202c6a8",
+		"name": "back-end",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13221406"
+	},
+	"item": [
+		{
+			"name": "Crear Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"nombre\": \"Usuario16\",   \n    \"correo\": \"correo16@hotmail.com\",\n    \"password\": \"62222222\",\n    \"rol\": \"ADMIN_ROLE\",\n    \"estado\": \"true\"\n}   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/usuarios",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"nombre\": \"javie EL SUPER GUAPO\",   \n    \"google\":false,\n    \"nuevoCampo\":true,\n    \"correo\": \"weduar@hotmai2l.com\",\n    \"password\": \"62222222\",\n    \"rol\": \"VENTAS_ROLE\",\n    \"estado\": \"true\"\n}   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/usuarios/65dcf51e109521e64d8d06ff",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"usuarios",
+						"65dcf51e109521e64d8d06ff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Usuarios - Paginado",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/usuarios?desde=1&limite=3",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "desde",
+							"value": "1"
+						},
+						{
+							"key": "limite",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRkMDA4NWNiYjI5MTRhNDAzODI0NGIiLCJpYXQiOjE3MDk5MDg0MzMsImV4cCI6MTcwOTkyMjgzM30.INZNULhhw_isfGJSKdad8f09bqBfLT4jLyeafyi7Rn8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}api/usuarios/65dd0091cbb2914a4038244f",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"usuarios",
+						"65dd0091cbb2914a4038244f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "abc12",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"correo\": \"correo16@hotmail.com\",\n    \"password\": \"62222222\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/auth/login",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "google",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRkMDA4NWNiYjI5MTRhNDAzODI0NGIiLCJpYXQiOjE3MTA4MDgzOTcsImV4cCI6MTcxMDgyMjc5N30.zFodIet90HYfzgYnm4VPiG3H8-nu52l_4MSE-S557Rw\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/auth/google",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"auth",
+						"google"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todas las categorías ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRkMDA4NWNiYjI5MTRhNDAzODI0NGIiLCJpYXQiOjE3MTEyMDYwNDUsImV4cCI6MTcxMTIyMDQ0NX0.krCQQRVDkHTVjPXa6Q9FaXtzAm5ZiIyLTIQzWKb0xlk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Usuario16\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/categorias",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener una categoría por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/categorias/65fe036e7fefc302e54f1919",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"categorias",
+						"65fe036e7fefc302e54f1919"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una nueva categoria",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViMjUzODNmZjFjNTM5YjgxODQ4NDYiLCJpYXQiOjE3MTE5ODM3MzksImV4cCI6MTcxMTk5ODEzOX0.V3WvAENmLb2FF-9IQ2PNAERd7-3glXb-YavYxtgriuo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Tomates\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/categorias",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar un registro por ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRkMDA4NWNiYjI5MTRhNDAzODI0NGIiLCJpYXQiOjE3MTE4MzQ2NDcsImV4cCI6MTcxMTg0OTA0N30.ik5Vr7wCAA0lQtKuoOCvFz1emdhuab3SQPgEOvyJEVE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"GalletaSs\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/categorias/65fe036e7fefc302e54f1919",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"categorias",
+						"65fe036e7fefc302e54f1919"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una Categoria",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWRkMDA4NWNiYjI5MTRhNDAzODI0NGIiLCJpYXQiOjE3MTE4MzQ2NDcsImV4cCI6MTcxMTg0OTA0N30.ik5Vr7wCAA0lQtKuoOCvFz1emdhuab3SQPgEOvyJEVE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}api/categorias/65fe036e7fefc302e54f1919",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"categorias",
+						"65fe036e7fefc302e54f1919"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Producto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViMjUzODNmZjFjNTM5YjgxODQ4NDYiLCJpYXQiOjE3MTIwOTg0MzksImV4cCI6MTcxMjExMjgzOX0.Coh8IbP07iSoIZnjrDuLiniHh4SrLbkuQm3jB-awVPI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"condones\",\n    \"categoria\": \"660acc9b7bf482fae60e4089\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/productos",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/productos",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener producto id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/productos/660c981553bbdf246ed2e3a8",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"productos",
+						"660c981553bbdf246ed2e3a8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar producto",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViMjUzODNmZjFjNTM5YjgxODQ4NDYiLCJpYXQiOjE3MTIyNDEzMzEsImV4cCI6MTcxMjI1NTczMX0.nkIz_jG8ZNT5CwwD-cAtSgo5mWPCA5j2Ivf12GgRRtI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"salsa de tomate\",\n    \"categoria\": \"660acc9b7bf482fae60e4089\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/productos/660c981553bbdf246ed2e3a8",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"productos",
+						"660c981553bbdf246ed2e3a8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar producto",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViMjUzODNmZjFjNTM5YjgxODQ4NDYiLCJpYXQiOjE3MTIyNDEzMzEsImV4cCI6MTcxMjI1NTczMX0.nkIz_jG8ZNT5CwwD-cAtSgo5mWPCA5j2Ivf12GgRRtI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/productos/660c981553bbdf246ed2e3a8",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"productos",
+						"660c981553bbdf246ed2e3a8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/buscar/productos/toma",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"buscar",
+						"productos",
+						"toma"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SubirArchivos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivo",
+							"type": "file",
+							"src": "/home/javier/Descargas/Javier_Eduardo_Tarazona_Castellanos.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}api/uploads",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"uploads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cargar Imagen de Usuarios",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivo",
+							"type": "file",
+							"src": "/home/javier/Descargas/WhatsApp Image 2024-02-27 at 9.29.12 AM.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}api/uploads/usuarios/65dd00b6cbb2914a40382457",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"uploads",
+						"usuarios",
+						"65dd00b6cbb2914a40382457"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cargar Imagen productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/uploads/productos/660ec0304c0cd97c55d8c058",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"uploads",
+						"productos",
+						"660ec0304c0cd97c55d8c058"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
